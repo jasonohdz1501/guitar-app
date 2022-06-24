@@ -5,16 +5,16 @@ import styles from "../styles/Us.module.css";
 const Us = () => {
   return (
     <div>
-      <Layout page="us">
-        <main className="contenedor">
-          <h2 className="heading"> About Us</h2>
+      <Layout page='us'>
+        <main className='contenedor'>
+          <h2 className='heading'> About Us</h2>
           <div className={styles.content}>
             <Image
               width={600}
               height={450}
-              src="/img/nosotros.jpg"
-              alt="about us image"
-              layout="responsive"
+              src='/img/nosotros.jpg'
+              alt='about us image'
+              layout='responsive'
             />
             <div>
               <p>

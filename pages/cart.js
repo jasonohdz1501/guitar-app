@@ -11,7 +11,7 @@ const Cart = ({ cart, updateCart, deleteItemFromCart }) => {
 
   return (
     <Layout>
-      <h2 className="heading">Cart</h2>
+      <h2 className='heading'>Cart</h2>
       <main className={`${styles.content} contenedor`}>
         <div className={styles.cart}>
           {cart.length === 0 ? (
@@ -39,14 +39,14 @@ const Cart = ({ cart, updateCart, deleteItemFromCart }) => {
                           updateCart(e.target.value, item.id);
                         }}
                       >
-                        <option value="1"> 1</option>
-                        <option value="2">2 </option>
-                        <option value="3">3 </option>
-                        <option value="4">4 </option>
-                        <option value="5">5 </option>
-                        <option value="6"> 6</option>
-                        <option value="7"> 7</option>
-                        <option value="8"> 8</option>
+                        <option value='1'> 1</option>
+                        <option value='2'>2 </option>
+                        <option value='3'>3 </option>
+                        <option value='4'>4 </option>
+                        <option value='5'>5 </option>
+                        <option value='6'> 6</option>
+                        <option value='7'> 7</option>
+                        <option value='8'> 8</option>
                       </select>
                     </div>
                     <p className={styles.price}>${item.price}</p>
@@ -55,7 +55,7 @@ const Cart = ({ cart, updateCart, deleteItemFromCart }) => {
                     </p>
                   </div>
                   <button
-                    type="button"
+                    type='button'
                     className={styles.delete}
                     onClick={() => {
                       deleteItemFromCart(item.id);
