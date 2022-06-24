@@ -5,23 +5,22 @@ import { formatDate } from "../../helpers";
 import styles from "../../styles/Entry.module.css";
 
 const EntryBlog = ({ entry }) => {
-  const { content, published_at, image, title } = entry ?? entry;
   const router = useRouter();
   return (
-    <Layout page={title}>
-      <main className="contenedor">
-        <h1 className="heading">{title}</h1>
+    <Layout page={entry.title}>
+      <main className='contenedor'>
+        <h1 className='heading'>{entry.title}</h1>
         <article className={styles.entry}>
           <Image
-            Layout="responsive"
+            Layout='responsive'
             width={800}
             height={600}
-            src={image.url}
-            alt={`Image entry ${title}`}
+            src={entry.image.url}
+            alt={`Image entry ${entry.title}`}
           />
           <div>
-            <p className={styles.date}>{formatDate(published_at)}</p>
-            <p className={styles.text}>{content}</p>
+            <p className={styles.date}>{formatDate(entry.published_at)}</p>
+            <p className={styles.text}>{entry.content}</p>
           </div>
         </article>
       </main>
