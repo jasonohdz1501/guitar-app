@@ -30,28 +30,28 @@ const EntryBlog = ({ entry }) => {
 
 //The way to fetch data through static props at NextJS
 
-export async function getStaticPaths() {
-  const response = await fetch(`${process.env.API_BASE_URL}/blogs`);
-  const entries = await response.json();
-  const paths = entries.map((entry) => ({ params: { url: entry.url } }));
+// export async function getStaticPaths() {
+//   const response = await fetch(`${process.env.API_BASE_URL}/blogs`);
+//   const entries = await response.json();
+//   const paths = entries.map((entry) => ({ params: { url: entry.url } }));
 
-  return { paths, fallback: true };
-}
+//   return { paths, fallback: true };
+// }
 
-export async function getStaticProps({ params: { url } }) {
-  const response = await fetch(`${process.env.API_BASE_URL}/blogs/?url=${url}`);
-  const entry = await response.json();
-  return {
-    props: { entry: entry[0] },
-  };
-}
-
-// export async function getServerSideProps({ query: { id } }) {
-//   const response = await fetch(`${process.env.API_BASE_URL}/blogs/${id}`);
+// export async function getStaticProps({ params: { url } }) {
+//   const response = await fetch(`${process.env.API_BASE_URL}/blogs/?url=${url}`);
 //   const entry = await response.json();
 //   return {
-//     props: { entry },
+//     props: { entry: entry[0] },
 //   };
 // }
+
+export async function getServerSideProps({ query: { url } }) {
+  const response = await fetch(`${process.env.API_BASE_URL}/blogs?_url=${url}`);
+  const entry = await response.json();
+  return {
+    props: { entry },
+  };
+}
 
 export default EntryBlog;
