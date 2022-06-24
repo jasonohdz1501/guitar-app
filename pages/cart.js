@@ -19,7 +19,7 @@ const Cart = ({ cart, updateCart, deleteItemFromCart }) => {
           ) : (
             <div>
               {cart.map((item) => (
-                <div key={item.id} className={styles.item}>
+                <div key={item._id} className={styles.item}>
                   <div>
                     <Image
                       height={480}
@@ -36,7 +36,7 @@ const Cart = ({ cart, updateCart, deleteItemFromCart }) => {
                         className={styles.select}
                         value={item.quantity}
                         onChange={(e) => {
-                          updateCart(e.target.value, item.id);
+                          updateCart(e.target.value, item._id);
                         }}
                       >
                         <option value='1'> 1</option>
@@ -58,7 +58,7 @@ const Cart = ({ cart, updateCart, deleteItemFromCart }) => {
                     type='button'
                     className={styles.delete}
                     onClick={() => {
-                      deleteItemFromCart(item.id);
+                      deleteItemFromCart(item._id);
                     }}
                   >
                     X

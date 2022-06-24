@@ -18,9 +18,9 @@ function MyApp({ Component, pageProps }) {
 
   const addToCart = (productAdded) => {
     setCart(
-      cart.some((product) => product.id === productAdded.id)
+      cart.some((product) => product._id === productAdded._id)
         ? cart.map((product) =>
-            product.id === productAdded.id
+            product._id === productAdded._id
               ? {
                   ...product,
                   quantity: productAdded.quantity,
@@ -34,13 +34,13 @@ function MyApp({ Component, pageProps }) {
   const updateCart = (quantity, id) => {
     setCart(
       cart.map((product) =>
-        product.id === id ? { ...product, quantity: quantity } : product
+        product._id === id ? { ...product, quantity: quantity } : product
       )
     );
   };
 
   const deleteItemFromCart = (id) => {
-    setCart(cart.filter((product) => product.id !== id));
+    setCart(cart.filter((product) => product._id !== id));
   };
 
   return (

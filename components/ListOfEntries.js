@@ -5,7 +5,7 @@ const ListOfEntries = ({ entries }) => {
   return (
     <div className={styles.blog}>
       {entries &&
-        entries.map((entry) => <Entry key={entry.id} entry={entry} />)}
+        entries.map((entry) => <Entry key={entry._id} entry={entry} />)}
     </div>
   );
 };
