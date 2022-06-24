@@ -76,7 +76,7 @@ const Cart = ({ cart, updateCart, deleteItemFromCart }) => {
               <p>Total: ${total}</p>
             </>
           ) : (
-            <p>Ther's no products</p>
+            <p>There&apos;s no products</p>
           )}
         </div>
       </main>
